@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8987B4D20F2F73939942995FD2C3EC5287540CED",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8987B4D20F2F73939942995FD2C3EC5287540CED" : 9223372036854775807,
+    "25BC19AB9FB4F4C5140CFC45DB24FE2DEA3E8D0E" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "416ABEC0-9B11-4E88-BDC5-06D53C09589C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8987B4D20F2F73939942995FD2C3EC5287540CED" : "DisplayMessageRGBMatrix\/",
+    "25BC19AB9FB4F4C5140CFC45DB24FE2DEA3E8D0E" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DisplayMessage",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DisplayMessage.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mick111\/rpi-rgb-led-matrix.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "25BC19AB9FB4F4C5140CFC45DB24FE2DEA3E8D0E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mick111\/DisplayMessageRGBMatrix.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8987B4D20F2F73939942995FD2C3EC5287540CED"
+    }
+  ]
+}

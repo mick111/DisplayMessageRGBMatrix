@@ -7,20 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41114DA31E77611700195EED /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41114DA11E77611700195EED /* Interface.storyboard */; };
+		41114DA51E77611700195EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41114DA41E77611700195EED /* Assets.xcassets */; };
+		41114DAC1E77611700195EED /* DisplayMessageWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 41114DAB1E77611700195EED /* DisplayMessageWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		41114DB11E77611700195EED /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41114DB01E77611700195EED /* InterfaceController.swift */; };
+		41114DB31E77611700195EED /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41114DB21E77611700195EED /* ExtensionDelegate.swift */; };
+		41114DB51E77611700195EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41114DB41E77611700195EED /* Assets.xcassets */; };
+		41114DB91E77611700195EED /* DisplayMessageWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 41114D9F1E77611700195EED /* DisplayMessageWatch.app */; };
 		41484E491E74315800353B9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41484E481E74315800353B9F /* AppDelegate.swift */; };
 		41484E4B1E74315800353B9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41484E4A1E74315800353B9F /* Assets.xcassets */; };
 		41484E4E1E74315800353B9F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41484E4C1E74315800353B9F /* MainMenu.xib */; };
 		41484E591E74315900353B9F /* DisplayMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41484E581E74315900353B9F /* DisplayMessageTests.swift */; };
-		41484E8E1E746D1800353B9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41484E8D1E746D1800353B9F /* AppDelegate.swift */; };
+		41484E8E1E746D1800353B9F /* AppDelegateiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41484E8D1E746D1800353B9F /* AppDelegateiOS.swift */; };
 		41484E901E746D1800353B9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41484E8F1E746D1800353B9F /* ViewController.swift */; };
 		41484E931E746D1800353B9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41484E911E746D1800353B9F /* Main.storyboard */; };
 		41484E951E746D1800353B9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41484E941E746D1800353B9F /* Assets.xcassets */; };
 		41484E981E746D1800353B9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41484E961E746D1800353B9F /* LaunchScreen.storyboard */; };
 		41484E9E1E74700E00353B9F /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41484E9D1E74700E00353B9F /* ConnectionController.swift */; };
 		41484E9F1E74700E00353B9F /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41484E9D1E74700E00353B9F /* ConnectionController.swift */; };
+		41EE62881E911A8100A95E9B /* TB_historyTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41EE62871E911A8100A95E9B /* TB_historyTemplate@2x.png */; };
+		41EE628A1E912B3700A95E9B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE62891E912B3700A95E9B /* Utilities.swift */; };
+		41EE628B1E912B3700A95E9B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE62891E912B3700A95E9B /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		41114DAD1E77611700195EED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41484E3D1E74315800353B9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41114DAA1E77611700195EED;
+			remoteInfo = "DisplayMessageWatch Extension";
+		};
+		41114DB71E77611700195EED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41484E3D1E74315800353B9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41114D9E1E77611700195EED;
+			remoteInfo = DisplayMessageWatch;
+		};
 		41484E551E74315900353B9F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 41484E3D1E74315800353B9F /* Project object */;
@@ -31,6 +55,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		41114DBF1E77611700195EED /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				41114DAC1E77611700195EED /* DisplayMessageWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41114DC11E77611700195EED /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				41114DB91E77611700195EED /* DisplayMessageWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41484EC41E74AF1C00353B9F /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -44,6 +90,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41114D9F1E77611700195EED /* DisplayMessageWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisplayMessageWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41114DA21E77611700195EED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		41114DA41E77611700195EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		41114DA61E77611700195EED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41114DAB1E77611700195EED /* DisplayMessageWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DisplayMessageWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41114DB01E77611700195EED /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		41114DB21E77611700195EED /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		41114DB41E77611700195EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		41114DB61E77611700195EED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41484E451E74315800353B9F /* DisplayMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisplayMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41484E481E74315800353B9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41484E4A1E74315800353B9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,7 +108,7 @@
 		41484E581E74315900353B9F /* DisplayMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMessageTests.swift; sourceTree = "<group>"; };
 		41484E5A1E74315900353B9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41484E8B1E746D1800353B9F /* DisplayMessageiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisplayMessageiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		41484E8D1E746D1800353B9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		41484E8D1E746D1800353B9F /* AppDelegateiOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateiOS.swift; sourceTree = "<group>"; };
 		41484E8F1E746D1800353B9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = DisplayMessageiOS/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		41484E921E746D1800353B9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41484E941E746D1800353B9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,9 +116,18 @@
 		41484E991E746D1800353B9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41484E9D1E74700E00353B9F /* ConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionController.swift; sourceTree = "<group>"; };
 		41484EAF1E74AF1C00353B9F /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = Library/Frameworks/IntentsUI.framework; sourceTree = DEVELOPER_DIR; };
+		41EE62871E911A8100A95E9B /* TB_historyTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TB_historyTemplate@2x.png"; sourceTree = "<group>"; };
+		41EE62891E912B3700A95E9B /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		41114DA81E77611700195EED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41484E421E74315800353B9F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,6 +152,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41114DA01E77611700195EED /* DisplayMessageWatch */ = {
+			isa = PBXGroup;
+			children = (
+				41114DA11E77611700195EED /* Interface.storyboard */,
+				41EE62891E912B3700A95E9B /* Utilities.swift */,
+				41114DA41E77611700195EED /* Assets.xcassets */,
+				41114DA61E77611700195EED /* Info.plist */,
+			);
+			path = DisplayMessageWatch;
+			sourceTree = "<group>";
+		};
+		41114DAF1E77611700195EED /* DisplayMessageWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				41114DB01E77611700195EED /* InterfaceController.swift */,
+				41114DB21E77611700195EED /* ExtensionDelegate.swift */,
+				41114DB41E77611700195EED /* Assets.xcassets */,
+				41114DB61E77611700195EED /* Info.plist */,
+			);
+			path = "DisplayMessageWatch Extension";
+			sourceTree = "<group>";
+		};
 		41484E3C1E74315800353B9F = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +181,8 @@
 				41484E471E74315800353B9F /* DisplayMessage */,
 				41484E571E74315900353B9F /* DisplayMessageTests */,
 				41484E8C1E746D1800353B9F /* DisplayMessageiOS */,
+				41114DA01E77611700195EED /* DisplayMessageWatch */,
+				41114DAF1E77611700195EED /* DisplayMessageWatch Extension */,
 				41484EAE1E74AF1C00353B9F /* Frameworks */,
 				41484E461E74315800353B9F /* Products */,
 			);
@@ -106,6 +194,8 @@
 				41484E451E74315800353B9F /* DisplayMessage.app */,
 				41484E541E74315900353B9F /* DisplayMessageTests.xctest */,
 				41484E8B1E746D1800353B9F /* DisplayMessageiOS.app */,
+				41114D9F1E77611700195EED /* DisplayMessageWatch.app */,
+				41114DAB1E77611700195EED /* DisplayMessageWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +205,7 @@
 			children = (
 				41484E481E74315800353B9F /* AppDelegate.swift */,
 				41484E4A1E74315800353B9F /* Assets.xcassets */,
+				41EE62871E911A8100A95E9B /* TB_historyTemplate@2x.png */,
 				41484E4C1E74315800353B9F /* MainMenu.xib */,
 				41484E4F1E74315800353B9F /* Info.plist */,
 			);
@@ -133,7 +224,7 @@
 		41484E8C1E746D1800353B9F /* DisplayMessageiOS */ = {
 			isa = PBXGroup;
 			children = (
-				41484E8D1E746D1800353B9F /* AppDelegate.swift */,
+				41484E8D1E746D1800353B9F /* AppDelegateiOS.swift */,
 				41484E8F1E746D1800353B9F /* ViewController.swift */,
 				41484E911E746D1800353B9F /* Main.storyboard */,
 				41484E941E746D1800353B9F /* Assets.xcassets */,
@@ -154,6 +245,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		41114D9E1E77611700195EED /* DisplayMessageWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41114DC01E77611700195EED /* Build configuration list for PBXNativeTarget "DisplayMessageWatch" */;
+			buildPhases = (
+				41114D9D1E77611700195EED /* Resources */,
+				41114DBF1E77611700195EED /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41114DAE1E77611700195EED /* PBXTargetDependency */,
+			);
+			name = DisplayMessageWatch;
+			productName = DisplayMessageWatch;
+			productReference = 41114D9F1E77611700195EED /* DisplayMessageWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		41114DAA1E77611700195EED /* DisplayMessageWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41114DBE1E77611700195EED /* Build configuration list for PBXNativeTarget "DisplayMessageWatch Extension" */;
+			buildPhases = (
+				41114DA71E77611700195EED /* Sources */,
+				41114DA81E77611700195EED /* Frameworks */,
+				41114DA91E77611700195EED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DisplayMessageWatch Extension";
+			productName = "DisplayMessageWatch Extension";
+			productReference = 41114DAB1E77611700195EED /* DisplayMessageWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		41484E441E74315800353B9F /* DisplayMessage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41484E5D1E74315900353B9F /* Build configuration list for PBXNativeTarget "DisplayMessage" */;
@@ -197,10 +322,12 @@
 				41484E881E746D1800353B9F /* Frameworks */,
 				41484E891E746D1800353B9F /* Resources */,
 				41484EC41E74AF1C00353B9F /* Embed App Extensions */,
+				41114DC11E77611700195EED /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				41114DB81E77611700195EED /* PBXTargetDependency */,
 			);
 			name = DisplayMessageiOS;
 			productName = DisplayMessageiOS;
@@ -217,6 +344,16 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Michael Mouchous";
 				TargetAttributes = {
+					41114D9E1E77611700195EED = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = LLZ5M6CBUE;
+						ProvisioningStyle = Automatic;
+					};
+					41114DAA1E77611700195EED = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = LLZ5M6CBUE;
+						ProvisioningStyle = Automatic;
+					};
 					41484E441E74315800353B9F = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = LLZ5M6CBUE;
@@ -259,16 +396,36 @@
 				41484E441E74315800353B9F /* DisplayMessage */,
 				41484E531E74315900353B9F /* DisplayMessageTests */,
 				41484E8A1E746D1800353B9F /* DisplayMessageiOS */,
+				41114D9E1E77611700195EED /* DisplayMessageWatch */,
+				41114DAA1E77611700195EED /* DisplayMessageWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		41114D9D1E77611700195EED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41114DA51E77611700195EED /* Assets.xcassets in Resources */,
+				41114DA31E77611700195EED /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41114DA91E77611700195EED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41114DB51E77611700195EED /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41484E431E74315800353B9F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				41484E4B1E74315800353B9F /* Assets.xcassets in Resources */,
+				41EE62881E911A8100A95E9B /* TB_historyTemplate@2x.png in Resources */,
 				41484E4E1E74315800353B9F /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +450,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		41114DA71E77611700195EED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41EE628B1E912B3700A95E9B /* Utilities.swift in Sources */,
+				41114DB31E77611700195EED /* ExtensionDelegate.swift in Sources */,
+				41114DB11E77611700195EED /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41484E411E74315800353B9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,13 +483,24 @@
 			files = (
 				41484E901E746D1800353B9F /* ViewController.swift in Sources */,
 				41484E9F1E74700E00353B9F /* ConnectionController.swift in Sources */,
-				41484E8E1E746D1800353B9F /* AppDelegate.swift in Sources */,
+				41EE628A1E912B3700A95E9B /* Utilities.swift in Sources */,
+				41484E8E1E746D1800353B9F /* AppDelegateiOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		41114DAE1E77611700195EED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41114DAA1E77611700195EED /* DisplayMessageWatch Extension */;
+			targetProxy = 41114DAD1E77611700195EED /* PBXContainerItemProxy */;
+		};
+		41114DB81E77611700195EED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41114D9E1E77611700195EED /* DisplayMessageWatch */;
+			targetProxy = 41114DB71E77611700195EED /* PBXContainerItemProxy */;
+		};
 		41484E561E74315900353B9F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 41484E441E74315800353B9F /* DisplayMessage */;
@@ -331,6 +509,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		41114DA11E77611700195EED /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41114DA21E77611700195EED /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		41484E4C1E74315800353B9F /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -358,6 +544,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		41114DBA1E77611700195EED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LLZ5M6CBUE;
+				IBSC_MODULE = DisplayMessageWatch_Extension;
+				INFOPLIST_FILE = DisplayMessageWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mick111.DisplayMessageiOS.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		41114DBB1E77611700195EED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LLZ5M6CBUE;
+				IBSC_MODULE = DisplayMessageWatch_Extension;
+				INFOPLIST_FILE = DisplayMessageWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mick111.DisplayMessageiOS.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		41114DBC1E77611700195EED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LLZ5M6CBUE;
+				INFOPLIST_FILE = "DisplayMessageWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mick111.DisplayMessageiOS.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		41114DBD1E77611700195EED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LLZ5M6CBUE;
+				INFOPLIST_FILE = "DisplayMessageWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mick111.DisplayMessageiOS.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
 		41484E5B1E74315900353B9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -452,6 +716,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LLZ5M6CBUE;
 				INFOPLIST_FILE = DisplayMessage/Info.plist;
@@ -466,6 +731,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LLZ5M6CBUE;
 				INFOPLIST_FILE = DisplayMessage/Info.plist;
@@ -548,6 +814,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		41114DBE1E77611700195EED /* Build configuration list for PBXNativeTarget "DisplayMessageWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41114DBC1E77611700195EED /* Debug */,
+				41114DBD1E77611700195EED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41114DC01E77611700195EED /* Build configuration list for PBXNativeTarget "DisplayMessageWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41114DBA1E77611700195EED /* Debug */,
+				41114DBB1E77611700195EED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		41484E401E74315800353B9F /* Build configuration list for PBXProject "DisplayMessage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

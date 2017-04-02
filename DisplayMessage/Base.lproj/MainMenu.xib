@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="7104"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="12062"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
         <capability name="the Touch Bar" message="Use a version of macOS with Touch Bar support." minToolsVersion="8.1" minSystemVersion="10.12.1" requiredIntegratedClassName="NSTouchBar"/>
@@ -18,11 +18,14 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="DisplayMessage" customModuleProvider="target">
             <connections>
+                <outlet property="TouchbarLabel" destination="d4s-66-fyq" id="XdH-AW-30t"/>
                 <outlet property="addressComboBox" destination="ySC-qr-Bzj" id="v7O-oI-unG"/>
+                <outlet property="bgColorWell" destination="fTf-b3-MiN" id="9xN-zd-m4o"/>
                 <outlet property="colorWell" destination="SK2-FX-Nc0" id="T4v-HO-FQV"/>
                 <outlet property="disconnectButton" destination="fRH-sw-Gi9" id="1gw-uY-cef"/>
                 <outlet property="messageStackview" destination="DFp-F4-6El" id="9Zx-Yz-2KI"/>
                 <outlet property="messageTextField" destination="Pwu-xd-5tc" id="jlg-qq-rov"/>
+                <outlet property="touchbarLabel" destination="d4s-66-fyq" id="Z0m-x4-Zq1"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -691,20 +694,20 @@
         <window title="DisplayMessage" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="416" height="71"/>
+            <rect key="contentRect" x="335" y="390" width="732" height="70"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="416" height="71"/>
+                <rect key="frame" x="0.0" y="0.0" width="732" height="70"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="750" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7CH-5q-ovY">
-                        <rect key="frame" x="10" y="10" width="413" height="51"/>
+                        <rect key="frame" x="10" y="10" width="712" height="50"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="750" verticalStackHuggingPriority="249.99998474121094" verticalHuggingPriority="1000" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6pO-47-zgQ">
-                                <rect key="frame" x="0.0" y="29" width="413" height="22"/>
+                                <rect key="frame" x="0.0" y="29" width="712" height="21"/>
                                 <subviews>
                                     <comboBox verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySC-qr-Bzj">
-                                        <rect key="frame" x="0.0" y="-3" width="328" height="26"/>
+                                        <rect key="frame" x="0.0" y="-3.5" width="627" height="26"/>
                                         <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Host(:port)" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="SK2-Mv-FUx">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -714,8 +717,8 @@
                                             <action selector="selectionChanged:" target="Voe-Tx-rLC" id="Qn5-8I-LaW"/>
                                         </connections>
                                     </comboBox>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fRH-sw-Gi9">
-                                        <rect key="frame" x="327" y="-6.5" width="92" height="32"/>
+                                    <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fRH-sw-Gi9">
+                                        <rect key="frame" x="626" y="-7" width="92" height="32"/>
                                         <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qfr-aW-LCs">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -735,10 +738,10 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="250.99998474121094" verticalStackHuggingPriority="250.99998474121094" verticalHuggingPriority="751" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DFp-F4-6El">
-                                <rect key="frame" x="0.0" y="0.0" width="413" height="21"/>
+                                <rect key="frame" x="0.0" y="0.0" width="712" height="21"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="249" verticalHuggingPriority="751" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwu-xd-5tc">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="538" height="21"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="border" placeholderString="Message" drawsBackground="YES" id="pJU-SX-CLi">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -749,7 +752,7 @@
                                         </connections>
                                     </textField>
                                     <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="SK2-FX-Nc0">
-                                        <rect key="frame" x="363" y="0.0" width="50" height="21"/>
+                                        <rect key="frame" x="546" y="0.0" width="50" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="lHD-Gx-1u4"/>
                                         </constraints>
@@ -758,6 +761,26 @@
                                             <action selector="colorDidChange:" target="Voe-Tx-rLC" id="vqP-im-gAY"/>
                                         </connections>
                                     </colorWell>
+                                    <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="fTf-b3-MiN">
+                                        <rect key="frame" x="604" y="0.0" width="50" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="8NP-YA-DF1"/>
+                                        </constraints>
+                                        <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="bgcolorDidChange:" target="Voe-Tx-rLC" id="V5u-1v-dWY"/>
+                                        </connections>
+                                    </colorWell>
+                                    <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h2N-AL-dKj">
+                                        <rect key="frame" x="656" y="-7" width="62" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Hour" bezelStyle="rounded" image="TB_historyTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1VJ-03-Hxc">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showHour:" target="Voe-Tx-rLC" id="g12-H0-arj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <touchBar key="touchBar" id="rZj-Jm-oSP">
                                     <touchBarItems>
@@ -766,17 +789,60 @@
                                                 <action selector="colorDidChange:" target="Voe-Tx-rLC" id="Khp-xS-2Sr"/>
                                             </connections>
                                         </colorPickerItem>
+                                        <colorPickerItem visibilityPriority="1000" showsAlpha="NO" type="2" id="3OC-4c-jZZ">
+                                            <connections>
+                                                <action selector="bgcolorDidChange:" target="Voe-Tx-rLC" id="dhI-C1-g46"/>
+                                            </connections>
+                                        </colorPickerItem>
+                                        <touchBarItem id="r7t-HV-oWI">
+                                            <viewController key="viewController" id="CAT-d8-r8K">
+                                                <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GFs-8V-slJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                                    <buttonCell key="cell" type="push" bezelStyle="rounded" image="TB_historyTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="z1m-6V-TqV">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="showHour:" target="Voe-Tx-rLC" id="rAO-CY-Kba"/>
+                                                    </connections>
+                                                </button>
+                                            </viewController>
+                                            <size key="designTimeSize" width="72" height="30"/>
+                                        </touchBarItem>
+                                        <touchBarItem id="HrC-w5-so8">
+                                            <viewController key="viewController" id="skV-cZ-YDx">
+                                                <textField key="view" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4s-66-fyq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="46" height="24"/>
+                                                    <gestureRecognizers>
+                                                        <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="hCU-cK-jIP"/>
+                                                    </gestureRecognizers>
+                                                    <textFieldCell key="cell" borderStyle="bezel" alignment="left" title="Label" drawsBackground="YES" id="IBG-Vv-yKr">
+                                                        <font key="font" usesAppearanceFont="YES"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <connections>
+                                                            <action selector="tapOnLabel:" target="Voe-Tx-rLC" id="Orc-cr-L2W"/>
+                                                        </connections>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </viewController>
+                                        </touchBarItem>
                                     </touchBarItems>
                                 </touchBar>
                                 <constraints>
+                                    <constraint firstItem="h2N-AL-dKj" firstAttribute="width" secondItem="fTf-b3-MiN" secondAttribute="width" id="GOU-G8-5uu"/>
                                     <constraint firstItem="Pwu-xd-5tc" firstAttribute="height" secondItem="DFp-F4-6El" secondAttribute="height" id="Prq-cE-f2P"/>
                                     <constraint firstItem="Pwu-xd-5tc" firstAttribute="height" secondItem="SK2-FX-Nc0" secondAttribute="height" id="Weg-5F-tzm"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
@@ -803,7 +869,10 @@
                     <constraint firstItem="7CH-5q-ovY" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="yYb-wf-Na7"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="-39" y="-428"/>
+            <point key="canvasLocation" x="106" y="-416"/>
         </window>
     </objects>
+    <resources>
+        <image name="TB_historyTemplate" width="30" height="30"/>
+    </resources>
 </document>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller contentMode="scaleAspectFit" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="DisplayMessageWatch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="0yW-9I-FzZ">
+                            <items>
+                                <group width="130" height="130" alignment="center" verticalAlignment="center" backgroundImage="color_wheel" radius="0.0" id="7Wg-Lf-doB">
+                                    <items>
+                                        <group width="70" height="70" alignment="left" radius="0.0" id="Hlq-uV-em2">
+                                            <items>
+                                                <imageView alignment="right" verticalAlignment="bottom" image="TP16" contentMode="center" id="C1b-k5-lCN">
+                                                    <color key="tintColor" red="0.070511206261022252" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </imageView>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                            </items>
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="uZo-bZ-Cr0">
+                                    <connections>
+                                        <action selector="didTouch:" destination="AgC-eL-Hgc" id="V0N-vm-UeB"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                        </group>
+                        <slider width="1" height="3" alignment="center" verticalAlignment="bottom" continuous="YES" value="255" maximum="255" steps="255" minimumImage="1" maximumImage="1" id="R6t-nz-FfL"/>
+                    </items>
+                    <connections>
+                        <outlet property="group" destination="Hlq-uV-em2" id="dSr-05-p59"/>
+                        <outlet property="groupBG" destination="7Wg-Lf-doB" id="poc-L9-exl"/>
+                        <outlet property="groupBGBG" destination="0yW-9I-FzZ" id="v2W-zZ-ZCw"/>
+                        <outlet property="slider" destination="R6t-nz-FfL" id="Z09-fz-gxR"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="133" y="26"/>
+        </scene>
+    </scenes>
+</document>

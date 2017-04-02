@@ -75,13 +75,22 @@ class ConnectionController: NSObject {
         }
     }
     
+    func showTime() throws {
+        try send(message: "HOUR\n")
+    }
+    func nyan() throws {
+        try send(message: "NYAN\n")
+    }
     func setMessage(text: String) throws {
-        try send(message: "TEXT \(text.utf8)")
+        try send(message: "TEXT \(text.utf8)\n")
     }
     func setMessage(color : (red: Float, green: Float, blue: Float)) throws {
-        try send(message: "COLOR \(color.red) \(color.green) \(color.blue)")
+        try send(message: "COLOR \(color.red) \(color.green) \(color.blue)\n")
+    }
+    func setMessage(bgcolor : (red: Float, green: Float, blue: Float)) throws {
+        try send(message: "BGCOLOR \(bgcolor.red) \(bgcolor.green) \(bgcolor.blue)\n")
     }
     func setMessage(color : String) throws {
-        try send(message: "COLOR \(color)")
+        try send(message: "COLOR \(color)\n")
     }
 }

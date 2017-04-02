@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow!
 
+    @IBOutlet weak var touchbarLabel: NSTextField!
     @IBOutlet weak var messageStackview: NSStackView!
     @IBOutlet weak var addressComboBox: NSComboBox!
     @IBOutlet weak var messageTextField: NSTextField!
@@ -50,10 +51,50 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     
+    @IBAction func tapOnLabel(_ sender: AnyObject) {
+        let task = Process()
+        task.launchPath = "/usr/bin/say"
+        task.arguments = [touchbarLabel.stringValue]
+        task.launch()
+        task.waitUntilExit()
+    }
+    
+    @IBOutlet weak var bgColorWell: NSColorWell!
+    @IBAction func bgcolorDidChange(_ sender: AnyObject) {
+        var color : NSColor! = (sender as? NSColorWell)?.color
+        
+        if #available(OSX 10.12.2, *) {
+            if color == nil {
+                color = (sender as? NSColorPickerTouchBarItem)?.color
+            }
+        }
+        
+        guard color != nil else { return }
+        
+        bgColorWell.color = color
+        messageTextField.backgroundColor = color
+        
+        if #available(OSX 10.12.2, *) {
+            if let tb = ((sender as? NSView)?.superview as? NSTouchBarProvider)?.touchBar,
+                tb.itemIdentifiers.count > 1,
+                let item = tb.item(forIdentifier: tb.itemIdentifiers[1]) as? NSColorPickerTouchBarItem
+            {
+                item.color = color
+            }
+        }
+        
+        do {
+            try connectionController.setMessage(bgcolor : (red: Float(color.redComponent),
+                                                           green: Float(color.greenComponent),
+                                                           blue: Float(color.blueComponent)))
+        } catch {
+            updateUI()
+            NSAlert(error: error).runModal()
+        }
+    }
     @IBOutlet weak var colorWell: NSColorWell!
     
-    @IBAction func colorDidChange(_ sender: Any) {
-        
+    @IBAction func colorDidChange(_ sender: AnyObject) {
         var color : NSColor! = (sender as? NSColorWell)?.color
         
         if #available(OSX 10.12.2, *) {
@@ -89,6 +130,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func messageDidChanged(_ sender: NSTextField) {
         do {
             try connectionController.setMessage(text: sender.stringValue)
+            touchbarLabel.stringValue = sender.stringValue
             if let color = sender.textColor {
                 try connectionController.setMessage(color : (red: Float(color.redComponent),
                                                          green: Float(color.greenComponent),
@@ -98,6 +140,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             updateUI()
             NSAlert(error: error).runModal()
         }
+    }
+    
+    @IBAction func showHour(_ sender: Any) {
+        try? connectionController.showTime()
     }
     
     func updateUI() {

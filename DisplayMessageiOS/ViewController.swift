@@ -8,7 +8,7 @@
 
 import UIKit
 import WatchConnectivity
-
+import Photos
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, WCSessionDelegate {
     let connectionController = ConnectionController()
     
@@ -20,6 +20,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var disconnectButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
         updateUI()
         hostTextField.text = connectionController.lastServers.first?.0
@@ -40,6 +41,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     @IBAction func connect(_ sender: AnyObject) {
+        PHPhotoLibrary.requestAuthorization() { NSLog("\($0)") }
+        
         defer { updateUI() }
         do {
             try connectionController.connect(host: hostTextField.text ?? "",

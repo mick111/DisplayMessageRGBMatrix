@@ -9,18 +9,15 @@
 import WatchKit
 import Foundation
 import CoreMotion
-import WatchConnectivity
 import HealthKit
+class InterfaceControllerBG: InterfaceController {
+    override var isForBackground: Bool { return true }
+}
 
-class InterfaceController: WKInterfaceController, WCSessionDelegate, WKCrownDelegate {
-
-    let motionManager = CMMotionManager()
-    
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        crownSequencer.focus()
-        crownSequencer.delegate = self
-    }
+class InterfaceController: WKInterfaceController, WKCrownDelegate {
+    var isForBackground: Bool { return false }
+    var motionManager: CMMotionManager { return extensionDelegate.motionManager }
+    var extensionDelegate: ExtensionDelegate { return WKExtension.shared().delegate as! ExtensionDelegate }
     
     @IBOutlet var group: WKInterfaceGroup!
     @IBOutlet var slider: WKInterfaceSlider!
@@ -33,26 +30,30 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WKCrownDele
         bri = max(min(bri, 1.0), 0)
         slider.setValue(bri*255)
     }
-
+    
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+        crownSequencer.focus()
+        crownSequencer.delegate = self
+    }
+    
+    override func willDisappear() {
+        // This method is called when watch view controller is no longer visible
+        super.willDisappear()
+        motionManager.stopAccelerometerUpdates()
+    }
+    
     override func willActivate() {
-        
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        
-        if WCSession.isSupported() {
-            let session = WCSession.default()
-            session.delegate = self
-            session.activate()
-        }
-        
-        motionManager.accelerometerUpdateInterval = 1
+        extensionDelegate.activateSession()
         motionManager.startAccelerometerUpdates(to: OperationQueue.main) { (data, error) in
             guard let data = data else { return }
             
             let x = CGFloat(data.acceleration.x)*2
             let y = CGFloat(data.acceleration.y)*2
             let r = colorAt(point:.init(x:x,y:y),
-                            size:.init(width: 73, height: 73))
+                            size:.init(width: 130, height: 130))
             let sat = r.sat
             let hue = r.hue
             let color = UIColor(hue: hue,
@@ -68,37 +69,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WKCrownDele
                 self.groupBGBG.setBackgroundColor(color)
                 self.slider.setColor(color)
             }
-            
-            if WCSession.isSupported() {
-                let session = WCSession.default()
-                if session.activationState == .activated {
-                    session.sendMessage(
-                        ["COLORHUE": hue,
-                         "COLORSAT": sat,
-                         "COLORBRI": CGFloat(self.bri)
-                        ], replyHandler: nil)
-                }
+            if self.isForBackground {
+                self.extensionDelegate.sendBGColor(hue: hue, sat: sat, bri: CGFloat(self.bri))
+            } else {
+                self.extensionDelegate.sendColor(hue: hue, sat: sat, bri: CGFloat(self.bri))
             }
         }
     }
     
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        if activationState == .activated {
-            session.sendMessage(["TEXT":"\(DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short))"], replyHandler: nil)
-        }
-    }
-    
     @IBAction func didTouch(_ sender: WKTapGestureRecognizer) {
-        let session = WCSession.default()
-        if session.activationState == .activated {
-            session.sendMessage(["TEXT":"\(DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short))"], replyHandler: nil)
-        }
+        extensionDelegate.sendHour()
     }
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-        motionManager.stopAccelerometerUpdates()
-    }
-
 }

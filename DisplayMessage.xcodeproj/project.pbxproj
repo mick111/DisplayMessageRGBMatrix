@@ -25,6 +25,7 @@
 		41484E981E746D1800353B9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41484E961E746D1800353B9F /* LaunchScreen.storyboard */; };
 		41484E9E1E74700E00353B9F /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41484E9D1E74700E00353B9F /* ConnectionController.swift */; };
 		41484E9F1E74700E00353B9F /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41484E9D1E74700E00353B9F /* ConnectionController.swift */; };
+		4162C97A1E91589C00F00E8E /* Nyan.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4162C9791E91589C00F00E8E /* Nyan.gif */; };
 		41EE62881E911A8100A95E9B /* TB_historyTemplate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41EE62871E911A8100A95E9B /* TB_historyTemplate@2x.png */; };
 		41EE628A1E912B3700A95E9B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE62891E912B3700A95E9B /* Utilities.swift */; };
 		41EE628B1E912B3700A95E9B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EE62891E912B3700A95E9B /* Utilities.swift */; };
@@ -115,7 +116,7 @@
 		41484E971E746D1800353B9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41484E991E746D1800353B9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41484E9D1E74700E00353B9F /* ConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionController.swift; sourceTree = "<group>"; };
-		41484EAF1E74AF1C00353B9F /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = Library/Frameworks/IntentsUI.framework; sourceTree = DEVELOPER_DIR; };
+		4162C9791E91589C00F00E8E /* Nyan.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Nyan.gif; sourceTree = "<group>"; };
 		41EE62871E911A8100A95E9B /* TB_historyTemplate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TB_historyTemplate@2x.png"; sourceTree = "<group>"; };
 		41EE62891E912B3700A95E9B /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -156,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				41114DA11E77611700195EED /* Interface.storyboard */,
-				41EE62891E912B3700A95E9B /* Utilities.swift */,
 				41114DA41E77611700195EED /* Assets.xcassets */,
 				41114DA61E77611700195EED /* Info.plist */,
 			);
@@ -178,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				41484E9D1E74700E00353B9F /* ConnectionController.swift */,
+				41EE62891E912B3700A95E9B /* Utilities.swift */,
 				41484E471E74315800353B9F /* DisplayMessage */,
 				41484E571E74315900353B9F /* DisplayMessageTests */,
 				41484E8C1E746D1800353B9F /* DisplayMessageiOS */,
@@ -205,6 +206,7 @@
 			children = (
 				41484E481E74315800353B9F /* AppDelegate.swift */,
 				41484E4A1E74315800353B9F /* Assets.xcassets */,
+				4162C9791E91589C00F00E8E /* Nyan.gif */,
 				41EE62871E911A8100A95E9B /* TB_historyTemplate@2x.png */,
 				41484E4C1E74315800353B9F /* MainMenu.xib */,
 				41484E4F1E74315800353B9F /* Info.plist */,
@@ -237,7 +239,6 @@
 		41484EAE1E74AF1C00353B9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				41484EAF1E74AF1C00353B9F /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -426,6 +427,7 @@
 			files = (
 				41484E4B1E74315800353B9F /* Assets.xcassets in Resources */,
 				41EE62881E911A8100A95E9B /* TB_historyTemplate@2x.png in Resources */,
+				4162C97A1E91589C00F00E8E /* Nyan.gif in Resources */,
 				41484E4E1E74315800353B9F /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,7 +784,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = LLZ5M6CBUE;
 				INFOPLIST_FILE = DisplayMessageiOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mick111.DisplayMessageiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -800,7 +802,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = LLZ5M6CBUE;
 				INFOPLIST_FILE = DisplayMessageiOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mick111.DisplayMessageiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";

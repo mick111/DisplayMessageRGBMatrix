@@ -81,6 +81,9 @@ class ConnectionController: NSObject {
     func nyan() throws {
         try send(message: "NYAN\n")
     }
+    func dedim() throws {
+        try send(message: "DEDIM\n")
+    }
     func setMessage(text: String) throws {
         try send(message: "TEXT \(text.utf8)\n")
     }

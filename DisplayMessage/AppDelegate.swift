@@ -10,12 +10,12 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
+    
     let connectionController = ConnectionController()
     
     @IBOutlet weak var window: NSWindow!
-
-    @IBOutlet weak var touchbarLabel: NSTextField!
+    
+    @IBOutlet weak var touchbarTextButton: NSButton!
     @IBOutlet weak var messageStackview: NSStackView!
     @IBOutlet weak var addressComboBox: NSComboBox!
     @IBOutlet weak var messageTextField: NSTextField!
@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         updateUI()
     }
-
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
@@ -52,9 +52,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     @IBAction func tapOnLabel(_ sender: AnyObject) {
+        _=try? connectionController.setMessage(text: touchbarTextButton.title)
         let task = Process()
         task.launchPath = "/usr/bin/say"
-        task.arguments = [touchbarLabel.stringValue]
+        task.arguments = [touchbarTextButton.title]
         task.launch()
         task.waitUntilExit()
     }
@@ -75,7 +76,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         messageTextField.backgroundColor = color
         
         if #available(OSX 10.12.2, *) {
-            if let tb = ((sender as? NSView)?.superview as? NSTouchBarProvider)?.touchBar,
+            if let tb = (sender as? NSView)?.superview?.touchBar,
                 tb.itemIdentifiers.count > 1,
                 let item = tb.item(forIdentifier: tb.itemIdentifiers[1]) as? NSColorPickerTouchBarItem
             {
@@ -88,53 +89,62 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                                            green: Float(color.greenComponent),
                                                            blue: Float(color.blueComponent)))
         } catch {
+            // Problem during transmission, inform the user
             updateUI()
             NSAlert(error: error).runModal()
         }
     }
-    @IBOutlet weak var colorWell: NSColorWell!
     
+    /// ColorWell reference for text color selection
+    @IBOutlet weak var colorWell: NSColorWell!
+    /// Action to perform when the users update the color of the text
     @IBAction func colorDidChange(_ sender: AnyObject) {
+        // The color is coming from a color well
         var color : NSColor! = (sender as? NSColorWell)?.color
         
+        // The color is coming from a colorpicker on the touch bar
         if #available(OSX 10.12.2, *) {
             if color == nil {
                 color = (sender as? NSColorPickerTouchBarItem)?.color
             }
         }
         
+        // If we did not get the color, we cannot get further
         guard color != nil else { return }
         
+        // Update the color in the color well, the textfield and the touchbar
         colorWell.color = color
         messageTextField.textColor = color
-        
         if #available(OSX 10.12.2, *) {
-            if let tb = ((sender as? NSView)?.superview as? NSTouchBarProvider)?.touchBar,
+            if let tb = (sender as? NSView)?.superview?.touchBar,
                 let identifier = tb.itemIdentifiers.first,
                 let item = tb.item(forIdentifier: identifier) as? NSColorPickerTouchBarItem
-                {
-                    item.color = color
+            {
+                item.color = color
             }
         }
         
+        // Send the color to the server
         do {
             try connectionController.setMessage(color : (red: Float(color.redComponent),
-                                               green: Float(color.greenComponent),
-                                               blue: Float(color.blueComponent)))
+                                                         green: Float(color.greenComponent),
+                                                         blue: Float(color.blueComponent)))
         } catch {
+            // Problem during transmission, inform the user
             updateUI()
             NSAlert(error: error).runModal()
         }
     }
-
+    
+    /// Action to perform when the user enters a message in the textfield
     @IBAction func messageDidChanged(_ sender: NSTextField) {
         do {
             try connectionController.setMessage(text: sender.stringValue)
-            touchbarLabel.stringValue = sender.stringValue
+            touchbarTextButton.title = sender.stringValue
             if let color = sender.textColor {
                 try connectionController.setMessage(color : (red: Float(color.redComponent),
-                                                         green: Float(color.greenComponent),
-                                                         blue: Float(color.blueComponent)))
+                                                             green: Float(color.greenComponent),
+                                                             blue: Float(color.blueComponent)))
             }
         } catch {
             updateUI()
@@ -145,13 +155,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func showHour(_ sender: Any) {
         try? connectionController.showTime()
     }
+    @IBAction func nyan(_ sender: Any) {
+        try? connectionController.nyan()
+    }
+    @IBAction func dedim(_ sender: Any) {
+        try? connectionController.dedim()
+    }
     
     func updateUI() {
         addressComboBox.removeAllItems()
         addressComboBox.addItems(withObjectValues: connectionController.lastServers.map { $0 + ":\($1)" })
         addressComboBox.isEnabled = !connectionController.connected
         messageStackview.isHidden = !connectionController.connected
-        disconnectButton.isEnabled = addressComboBox.stringValue.characters.count > 0
+        disconnectButton.isEnabled = addressComboBox.stringValue.count > 0
         disconnectButton.state = connectionController.connected ? NSOnState : NSOffState
     }
 }

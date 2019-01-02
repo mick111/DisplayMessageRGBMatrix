@@ -8,7 +8,7 @@
 
 import UIKit
 import WatchConnectivity
-import Photos
+
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, WCSessionDelegate {
     let connectionController = ConnectionController()
     
@@ -41,8 +41,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     @IBAction func connect(_ sender: AnyObject) {
-        PHPhotoLibrary.requestAuthorization() { NSLog("\($0)") }
-        
         defer { updateUI() }
         do {
             try connectionController.connect(host: hostTextField.text ?? "",
@@ -210,6 +208,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     @IBAction func tapNyan(_ sender: Any) {
         _ = try? connectionController.nyan()
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as? CollectionViewController)?.connectionController = connectionController
     }
 }
 

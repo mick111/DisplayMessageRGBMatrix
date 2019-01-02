@@ -96,4 +96,7 @@ class ConnectionController: NSObject {
     func setMessage(color : String) throws {
         try send(message: "COLOR \(color)\n")
     }
+    func showGIFURL(ID: Int, time: Int = 20) throws {
+        try send(message: "URLGIF https://developer.lametric.com/content/apps/icon_thumbs/\(ID).gif \(time)\n")
+    }
 }

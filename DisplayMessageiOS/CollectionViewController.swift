@@ -31,14 +31,14 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return 10000
     }
 
     @IBAction func next(_ sender: Any) {
-        firstPage += 100
+        firstPage += 10000
     }
     @IBAction func prev(_ sender: Any) {
-        firstPage = max(0,firstPage-100)
+        firstPage = max(0,firstPage-10000)
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,14 +64,28 @@ class CollectionViewController: UICollectionViewController {
                 }
 
                 DispatchQueue.main.async {
-                    let imageView = UIImageView(frame: CGRect(x:0, y:0, width:myCell.frame.size.width, height:myCell.frame.size.height))
-                    imageView.image = UIImage(data: data)
+                    if let imageView = (myCell.subviews.first { $0 is UIImageView } ) {
+                        (imageView as? UIImageView)?.image = UIImage.gifImageWithData(data)
+                    } else {
+
+                        let imageView = UIImageView(frame: CGRect(x:0, y:0, width:myCell.frame.size.width, height:myCell.frame.size.height))
+                        imageView.image = UIImage.gifImageWithData(data)
+                        myCell.addSubview(imageView)
+                    }
+
+//                    let imageView =
                     //imageView.contentMode = UIViewContentMode.scaleAspectFit
-                    imageView.animationDuration = 1.0
-                    imageView.animationRepeatCount = 0
-                    imageView.startAnimating()
-                    myCell.addSubview(imageView)
+//                    imageView.animationDuration = 1.0
+//                    imageView.animationRepeatCount = 0
+//                    imageView.startAnimating()
+                    
 //                    self.collectionView?.reloadData()
+//                    let imageData = try? Data(contentsOf: Bundle.main.url(forResource: "play", withExtension: "gif")!)
+//                    let advTimeGif = UIImage.gifImageWithData(imageData!)
+//                    let imageView2 = UIImageView(image: advTimeGif)
+//                    imageView2.frame = CGRect(x: 20.0, y: 220.0, width:
+//                        self.view.frame.size.width - 40, height: 150.0)
+//                    view.addSubview(imageView2)
                 }
             }
 
@@ -82,7 +96,7 @@ class CollectionViewController: UICollectionViewController {
         return myCell
     }
 
-    var firstPage: Int = 12200 { didSet { collectionView?.reloadData() }}
+    var firstPage: Int = 0 { didSet { collectionView?.reloadData() }}
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
@@ -90,8 +104,6 @@ class CollectionViewController: UICollectionViewController {
         DispatchQueue.main.async {
             try? self.connectionController?.showGIFURL(ID: indexPath.row + self.firstPage)
         }
-
-        //"URLGIF https://developer.lametric.com/content/apps/icon_thumbs/$2.gif $1" > /dev/tcp/192.168.0.44/23735
     }
 
 

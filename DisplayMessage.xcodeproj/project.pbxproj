@@ -15,6 +15,7 @@
 		41114DB51E77611700195EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41114DB41E77611700195EED /* Assets.xcassets */; };
 		41114DB91E77611700195EED /* DisplayMessageWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 41114D9F1E77611700195EED /* DisplayMessageWatch.app */; };
 		412B9DD221DC2C0500251FA2 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B9DD021DC2BF600251FA2 /* CollectionViewController.swift */; };
+		412B9DD421DC3EE000251FA2 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B9DD321DC3EDF00251FA2 /* iOSDevCenters+GIF.swift */; };
 		41484E491E74315800353B9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41484E481E74315800353B9F /* AppDelegate.swift */; };
 		41484E4B1E74315800353B9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41484E4A1E74315800353B9F /* Assets.xcassets */; };
 		41484E4E1E74315800353B9F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41484E4C1E74315800353B9F /* MainMenu.xib */; };
@@ -102,6 +103,7 @@
 		41114DB41E77611700195EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41114DB61E77611700195EED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		412B9DD021DC2BF600251FA2 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		412B9DD321DC3EDF00251FA2 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		41484E451E74315800353B9F /* DisplayMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisplayMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41484E481E74315800353B9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41484E4A1E74315800353B9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		41484E8C1E746D1800353B9F /* DisplayMessageiOS */ = {
 			isa = PBXGroup;
 			children = (
+				412B9DD321DC3EDF00251FA2 /* iOSDevCenters+GIF.swift */,
 				412B9DD021DC2BF600251FA2 /* CollectionViewController.swift */,
 				41484E8D1E746D1800353B9F /* AppDelegateiOS.swift */,
 				41484E8F1E746D1800353B9F /* ViewController.swift */,
@@ -487,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41484E901E746D1800353B9F /* ViewController.swift in Sources */,
+				412B9DD421DC3EE000251FA2 /* iOSDevCenters+GIF.swift in Sources */,
 				41484E9F1E74700E00353B9F /* ConnectionController.swift in Sources */,
 				41EE628A1E912B3700A95E9B /* Utilities.swift in Sources */,
 				41484E8E1E746D1800353B9F /* AppDelegateiOS.swift in Sources */,

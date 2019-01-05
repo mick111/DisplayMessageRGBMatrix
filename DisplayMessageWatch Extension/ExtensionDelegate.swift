@@ -19,7 +19,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     
     func activateSession(){
         if WCSession.isSupported() {
-            let session = WCSession.default()
+            let session = WCSession.default
             session.delegate = self
             session.activate()
         }
@@ -28,7 +28,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     
     func sendHour(){
         if WCSession.isSupported() {
-            let session = WCSession.default()
+            let session = WCSession.default
             if session.activationState == .activated {
                 session.sendMessage(["HOUR":""], replyHandler: nil)
             }
@@ -37,7 +37,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     
     func sendBGColor(hue: CGFloat, sat: CGFloat, bri: CGFloat) {
         if WCSession.isSupported() {
-            let session = WCSession.default()
+            let session = WCSession.default
             if session.activationState == .activated {
                 session.sendMessage(
                     ["BGCOLORHUE": hue,
@@ -50,7 +50,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     
     func sendColor(hue: CGFloat, sat: CGFloat, bri: CGFloat) {
         if WCSession.isSupported() {
-            let session = WCSession.default()
+            let session = WCSession.default
             if session.activationState == .activated {
                 session.sendMessage(
                     ["COLORHUE": hue,

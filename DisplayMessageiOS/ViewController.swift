@@ -28,7 +28,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         portTextField.text = port == 0 ? nil : "\(port)"
         
         if WCSession.isSupported() {
-            let session = WCSession.default()
+            let session = WCSession.default
             session.delegate = self
             session.activate()
         }
@@ -48,8 +48,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             messageTextField.becomeFirstResponder()
 
         } catch {
-            let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
     }
@@ -66,8 +66,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
         catch {
             updateUI()
-            let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
     }
@@ -123,7 +123,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         NSLog(#function)
     }
     
-    func handleMessageOnMainThread(message: [String : Any]) {
+    @objc func handleMessageOnMainThread(message: [String : Any]) {
         if let text = message["TEXT"] as? String {
             messageTextField.text = text
             _ = try? connectionController.setMessage(text: text)

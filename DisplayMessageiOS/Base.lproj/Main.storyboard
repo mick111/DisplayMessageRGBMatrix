@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0iT-O3-Cds">
-                                <rect key="frame" x="10" y="72" width="300" height="492"/>
+                                <rect key="frame" x="10" y="78" width="300" height="492"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0Pg-o7-Cfv">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
@@ -268,28 +268,51 @@
             </objects>
             <point key="canvasLocation" x="138.75" y="112.5"/>
         </scene>
-        <!--Title-->
+        <!--GIFs-->
         <scene sceneID="3qz-be-ctM">
             <objects>
-                <collectionViewController id="G3e-Gr-UTT" customClass="CollectionViewController" customModule="DisplayMessageiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="GIFs" id="G3e-Gr-UTT" customClass="CollectionViewController" customModule="DisplayMessageiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TT3-gv-17r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KR1-g5-7cV">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="60" height="70"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MyCell" id="zRQ-2S-pMq">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MyCell" reuseIdentifier="MyCell" id="zRQ-2S-pMq" customClass="CollectionViewCell" customModule="DisplayMessageiOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YnF-XL-t00">
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfs-uu-9zl">
+                                            <rect key="frame" x="0.0" y="59" width="60" height="11"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                            <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="f9P-Jb-LPs">
+                                            <rect key="frame" x="12" y="12" width="37" height="37"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </activityIndicatorView>
+                                    </subviews>
                                 </view>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <connections>
+                                    <outlet property="activity" destination="f9P-Jb-LPs" id="j4S-cb-s9T"/>
+                                    <outlet property="imageView" destination="YnF-XL-t00" id="XfH-0a-vlM"/>
+                                    <outlet property="label" destination="Tfs-uu-9zl" id="21R-1J-p33"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -297,7 +320,7 @@
                             <outlet property="delegate" destination="G3e-Gr-UTT" id="afh-aN-r08"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Title" id="0Le-di-RRW">
+                    <navigationItem key="navigationItem" title="0" id="0Le-di-RRW">
                         <rightBarButtonItems>
                             <barButtonItem style="plain" id="IPr-Kq-Jng">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qjR-bC-BcB">
@@ -305,7 +328,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Next"/>
                                     <connections>
-                                        <action selector="next:" destination="G3e-Gr-UTT" eventType="touchUpInside" id="Jje-Bh-XwX"/>
+                                        <action selector="next:" destination="G3e-Gr-UTT" eventType="touchUpInside" id="Bh2-XW-Mwh"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -314,13 +337,16 @@
                                     <rect key="frame" x="154" y="7" width="71" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Prev"/>
+                                    <connections>
+                                        <action selector="prev:" destination="G3e-Gr-UTT" eventType="touchUpInside" id="mqs-J5-59q"/>
+                                    </connections>
                                 </button>
-                                <connections>
-                                    <action selector="prev:" destination="G3e-Gr-UTT" id="5vP-aq-ub8"/>
-                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="TT3-gv-17r" id="yVE-ej-E1n"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fu-yy-5gF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UEr-ym-CbT">
@@ -329,7 +355,7 @@
                     <state key="normal" title="Button"/>
                 </button>
             </objects>
-            <point key="canvasLocation" x="139" y="886"/>
+            <point key="canvasLocation" x="138.75" y="885"/>
         </scene>
     </scenes>
     <resources>
